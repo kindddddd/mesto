@@ -1,0 +1,7 @@
+.element__like-button_clicked {
+    background-image: url(../../../../images/element__like-button_clicked.svg);
+}
+
+.element__like-button_clicked:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto Russia</title>
+  <link rel="stylesheet" href="./pages/index.css">
+  <script src="./scripts/index.js" defer></script>
+  <meta name="description" content="Mesto Russia">
+  <meta name="keywords" content="Mesto Russia">
+  <meta name="author" content="Иван Гусев">
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/header__logo.svg" alt="Логотип">
+    </header>
+    <main class="content">
+      <div class="profile">
+        <img class="profile__avatar" src="./images/profile__avatar.jpg" alt="аватар">
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <div class="profile__edit-button" role="button"></div>
+          <p class="profile__description">Исследователь океана</p>
+        </div>
+        <div class="profile__add-button" role="button"></div>
+      </div>
+      <ul class="elements">
+        <li class="element">
+          <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash.png" alt="фото места">
+          <div class="element__description">
+            <h2 class="element__name">Карачаевск</h2>
+            <div class="element__like-button"></div>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__photo" src="./images/kirill-pershin-1404681-unsplash.png" alt="фото места">
+          <div class="element__description">
+            <h2 class="element__name">Гора Эльбрус</h2>
+            <div class="element__like-button"></div>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__photo" src="./images/kirill-pershin-1556355-unsplash.png" alt="фото места">
+          <div class="element__description">
+            <h2 class="element__name">Домбай</h2>
+            <div class="element__like-button"></div>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__photo" src="./images/kieran-taylor-up_amWpFXiE-unsplash.png" alt="фото места">
+          <div class="element__description">
+            <h2 class="element__name">Гора Эльбрус</h2>
+            <div class="element__like-button"></div>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__photo" src="./images/wolfgang-hasselmann-SiNYIpa7R-E-unsplash.png" alt="фото места">
+          <div class="element__description">
+            <h2 class="element__name">Домбай</h2>
+            <div class="element__like-button"></div>
+          </div>
+        </li>
+        <li class="element">
+          <img class="element__photo" src="./images/alea-film-NyJevkJ0S3A-unsplash.png" alt="фото места">
+          <div class="element__description">
+            <h2 class="element__name">Карачаево-Черкессия</h2>
+            <div class="element__like-button"></div>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <footer class="footer">
+      <p class="footer__author">
+        &copy 2020 Mesto Russia
+      </p>
+    </footer>
+  </div>
+  <section class="popup">
+    <div class="popup__container">
+      <div class="popup__close-button" role="button"></div>
+      <h2 class="popup__title">
+        Редактировать профиль
+      </h2>
+      <form class="popup__user-info">
+        <input class="popup__name" type="input"></input>
+        <input class="popup__description" type="input"></input>
+        <button class="popup__save-button" type="submit">
+          <p class="popup__save-text">Сохранить</p>
+        </button>
+      </form>
+
+    </div>
+  </section>
+</body>
+
+</html>
