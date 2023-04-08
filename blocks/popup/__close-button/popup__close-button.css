@@ -8,6 +8,11 @@
     right: -40px;
     top: -40px;
     cursor: pointer;
+    padding: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
 }
 
 @media all and (max-width:879px) {
