@@ -12,7 +12,7 @@
     background-color: transparent;
     position: absolute;
     left: 462px;
-    top: 32px;
+    top: 39.5px;
 }
 
 .profile__edit-button:hover {
@@ -24,6 +24,6 @@
         width: 18px;
         height: 18px;
         left: 245px;
-        top: 150px;
+        top: 154px;
     }
 }
