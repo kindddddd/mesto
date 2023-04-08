@@ -3,6 +3,7 @@
     margin: 40px auto 50px;
     display: flex;
     max-height: 120px;
+    justify-content: space-between;
 }
 
 @media all and (max-width:879px) {
