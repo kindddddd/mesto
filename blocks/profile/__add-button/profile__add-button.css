@@ -6,7 +6,6 @@
     background-image: url(../../../images/profile__add-button.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 22px 22px;
     align-self: center;
     cursor: pointer;
     padding: 0;
@@ -21,6 +20,6 @@
 @media all and (max-width:879px) {
     .profile__add-button {
         width: 282px;
-        background-size: 16px 16px;
+        background-image: url(../../../images/profile__add-button_mobile.svg);
     }
 }
