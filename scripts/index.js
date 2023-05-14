@@ -57,13 +57,18 @@ const initialCards = [
     }
 ];
 
-const photoTemplate = document.getElementById('photo-Template');
+const photoTamplate = document.getElementById('photo-Tamplate');
 const photoGrid = document.querySelector('.elements');
 
 const createPhotoCard = (photoData) => {
-    const photoCard = photoTemplate.content
+    const photoCard = photoTamplate.content
         .querySelector('.element')
         .cloneNode(true);
+    const cardName = photoCard.querySelector('.element__name');
+    const cardImage = photoCard.querySelector('.element__photo');
+    cardName.innerHTML = photoData.name;
+    cardImage.src = photoData.link;
+    cardImage.alt = photoData.name;
     return photoCard;
 };
 
