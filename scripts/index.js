@@ -56,3 +56,21 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
+const photoTemplate = document.getElementById('photo-Template');
+const photoGrid = document.querySelector('.elements');
+
+const createPhotoCard = (photoData) => {
+    const photoCard = photoTemplate.content
+        .querySelector('.element')
+        .cloneNode(true);
+    return photoCard;
+};
+
+const renderPhotoCard = (photoCard) => {
+    photoGrid.prepend(photoCard);
+}
+
+initialCards.forEach((card) => {
+    renderPhotoCard(createPhotoCard(card));
+});
