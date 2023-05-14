@@ -69,6 +69,16 @@ const createPhotoCard = (photoData) => {
     cardName.innerHTML = photoData.name;
     cardImage.src = photoData.link;
     cardImage.alt = photoData.name;
+    const deleteButton = photoCard.querySelector('.element__delete-button');
+    const likeButton = photoCard.querySelector('.element__like-button');
+    const handleDelete = () => {
+        photoCard.remove();
+    };
+    const handleLike = () => {
+        likeButton.classList.toggle('element__like-button_clicked');
+    };
+    deleteButton.addEventListener('click', handleDelete);
+    likeButton.addEventListener('click', handleLike);
     return photoCard;
 };
 
