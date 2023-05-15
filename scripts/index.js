@@ -7,6 +7,9 @@ const profileInputSaveButton = profileEditButtonPopup.querySelector('.popup__sav
 const profilePopUpForm = profileEditButtonPopup.querySelector('.popup__user-info');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
+const openPopup = (popup) => {
+    popup.classList.add('popup_opened');
+};
 function handleFormSubmit(evt) {
     evt.preventDefault();
     const name = profileInputName.value;
@@ -17,7 +20,7 @@ function handleFormSubmit(evt) {
 }
 
 profileEditButton.addEventListener('click', () => {
-    profileEditButtonPopup.classList.add('popup_opened');
+    openPopup(profileEditButtonPopup);
     profileInputName.value = profileName.textContent;
     profileInputDescription.value = profileDescription.textContent;
 })
@@ -59,7 +62,7 @@ const initialCards = [
 
 const photoTamplate = document.getElementById('photo-Tamplate');
 const photoGrid = document.querySelector('.elements');
-
+const addPhotoCard = document.querySelector('.profile__add-button');
 const createPhotoCard = (photoData) => {
     const photoCard = photoTamplate.content
         .querySelector('.element')
