@@ -39,7 +39,7 @@
       </p>
     </footer>
   </div>
-  <section class="popup">
+  <section class="popup popup_profile">
     <div class="popup__container">
       <button class="popup__close-button" type="button" aria-label="close"></button>
       <h2 class="popup__title">
@@ -55,7 +55,23 @@
           Сохранить
         </button>
       </form>
-
+    </div>
+  </section>
+  <section class="popup popup_place">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button" aria-label="close"></button>
+      <h2 class="popup__title">
+        Новое место </h2>
+      <form class="popup__user-info popup__user-info_place" id="user-info" name="user-info">
+        <label for="name"></label>
+        <input class="popup__name popup__name_place" type="text" id="name" name="name">
+        <label for=" description"></label>
+        <input class="popup__description popup__description_place" type="text" id="description" name="description">
+        <label for=" save"></label>
+        <button class="popup__save-button popup__save-button_place" type="submit" id="save" name="save">
+          Сохранить
+        </button>
+      </form>
     </div>
   </section>
   <template id="photo-Tamplate">
