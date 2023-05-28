@@ -30,48 +30,7 @@
         <button class="profile__add-button" type="button" aria-label="add"></button>
       </section>
       <ul class="elements">
-        <li class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash.png" alt="фото места">
-          <div class="element__description">
-            <h2 class="element__name">Карачаевск</h2>
-            <button class="element__like-button" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1404681-unsplash.png" alt="фото места">
-          <div class="element__description">
-            <h2 class="element__name">Гора Эльбрус</h2>
-            <button class="element__like-button" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1556355-unsplash.png" alt="фото места">
-          <div class="element__description">
-            <h2 class="element__name">Домбай</h2>
-            <button class="element__like-button" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/dmitry-axenov-w5yMqvSq6cI-unsplash.jpg" alt="фото места">
-          <div class="element__description">
-            <h2 class="element__name">Гора Эльбрус</h2>
-            <button class="element__like-button" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/ivan-3xRqcTlhjlw-unsplash.jpg" alt="фото места">
-          <div class="element__description">
-            <h2 class="element__name">Домбай</h2>
-            <button class="element__like-button" type="button" aria-label="like"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/aisvri-ONr2GmQp1nk-unsplash.jpg" alt="фото места">
-          <div class="element__description">
-            <h2 class="element__name">Карачаево-Черкессия</h2>
-            <button class="element__like-button" type="button" aria-label="like"></button>
-          </div>
-        </li>
+
       </ul>
     </main>
     <footer class="footer">
@@ -80,7 +39,7 @@
       </p>
     </footer>
   </div>
-  <section class="popup">
+  <section class="popup popup_profile">
     <div class="popup__container">
       <button class="popup__close-button" type="button" aria-label="close"></button>
       <h2 class="popup__title">
@@ -96,9 +55,36 @@
           Сохранить
         </button>
       </form>
-
     </div>
   </section>
+  <section class="popup popup_place">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button" aria-label="close"></button>
+      <h2 class="popup__title">
+        Новое место </h2>
+      <form class="popup__user-info popup__user-info_place" id="user-info" name="user-info">
+        <label for="name"></label>
+        <input class="popup__name popup__name_place" type="text" id="name" name="name">
+        <label for=" description"></label>
+        <input class="popup__description popup__description_place" type="text" id="description" name="description">
+        <label for=" save"></label>
+        <button class="popup__save-button popup__save-button_place" type="submit" id="save" name="save">
+          Сохранить
+        </button>
+      </form>
+    </div>
+  </section>
+  <template id="photo-Tamplate">
+    <li class="element">
+      <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash.png" alt="фото места">
+      <div class="element__description">
+        <h2 class="element__name">Карачаевск</h2>
+        <button class="element__delete-button" type="button" aria-label="delete"></button>
+        <button class="element__like-button" type="button" aria-label="like"></button>
+      </div>
+    </li>
+  </template>
+
 </body>
 
 </html>
