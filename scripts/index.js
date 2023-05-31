@@ -84,7 +84,7 @@ const createPhotoCard = (photoData) => {
 
     const cardViewPopup = document.querySelector('.popup_place_full-size');
     const cardViewPopupName = cardViewPopup.querySelector('.popup__title');
-    const cardViewPopupPhoto = cardViewPopup.querySelector('.popup__container__photo');
+    const cardViewPopupPhoto = cardViewPopup.querySelector('.popup__photo');
     const cardViewCloseButton = cardViewPopup.querySelector('.popup__close-button');
 
 
