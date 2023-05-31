@@ -1,0 +1,9 @@
+.popup__container_full-size {
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}

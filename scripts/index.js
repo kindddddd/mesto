@@ -81,9 +81,26 @@ const createPhotoCard = (photoData) => {
     const handleLike = () => {
         likeButton.classList.toggle('element__like-button_clicked');
     };
+
+    const cardViewPopup = document.querySelector('.popup_place_full-size');
+    const cardViewPopupName = cardViewPopup.querySelector('.popup__title');
+    const cardViewPopupPhoto = cardViewPopup.querySelector('.popup__container__photo');
+    const cardViewCloseButton = cardViewPopup.querySelector('.popup__close-button');
+
+
+    cardViewCloseButton.addEventListener('click', () => {
+        cardViewPopup.classList.remove('popup_opened');
+    });
+    cardImage.addEventListener('click', () => {
+        openPopup(cardViewPopup);
+        cardViewPopupName.textContent = cardName.textContent;
+        cardViewPopupPhoto.src = cardImage.src;
+    });
+
     deleteButton.addEventListener('click', handleDelete);
     likeButton.addEventListener('click', handleLike);
     return photoCard;
+
 };
 
 const renderPhotoCard = (photoCard) => {
@@ -126,3 +143,4 @@ const handleCardSubmit = (evt) => {
 
 const placePopUpForm = profileAddButtonPopup.querySelector('.popup__user-info_place');
 placePopUpForm.addEventListener('submit', handleCardSubmit);
+
