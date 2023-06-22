@@ -17,6 +17,7 @@ const profileAddButtonPopup = document.querySelector('.popup_place');
 const placePopUpForm = profileAddButtonPopup.querySelector('.popup__user-info_place');
 const placeinputName = profileAddButtonPopup.querySelector('.popup__name_place');
 const placeInputLink = profileAddButtonPopup.querySelector('.popup__description_place');
+const popupList = Array.from(document.querySelectorAll('.popup'));
 const initialCards = [
     {
         name: 'Архыз',
@@ -43,6 +44,7 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
 const handleCardSubmit = (evt) => {
     evt.preventDefault();
     const name = placeinputName.value;
@@ -118,3 +120,23 @@ addPhotoCard.addEventListener('click', () => {
     openPopup(profileAddButtonPopup);
 });
 placePopUpForm.addEventListener('submit', handleCardSubmit);
+
+
+
+popupList.forEach((popup) => {
+    popup.addEventListener('click', function (evt) {
+        if (evt.target === evt.currentTarget) {
+            closePopup(popup);
+        }
+
+        }); });
+
+const closeByEsc = (evt) => {
+            if (evt.keyCode === 27) {
+                closePopup(cardViewPopup);
+                closePopup(profileEditButtonPopup);
+                closePopup(profileAddButtonPopup);
+            }
+          }
+        
+document.addEventListener("keydown",closeByEsc);
