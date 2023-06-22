@@ -23,7 +23,6 @@
 @import url(../blocks/footer/__author/footer__author.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__error/popup__error.css);
-@import url(../blocks/popup/__error/_hidden/popup__error_hidden.css);
 @import url(../blocks/popup/__inputs/_invalid/popup__inputs_invalid.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);

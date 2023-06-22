@@ -1,14 +1,12 @@
 
 function setInputValidState(config, input, errorElement) {
     input.classList.remove(config.inputErrorClass);
-    errorElement.classList.add('popup__error_hidden');
     errorElement.textContent = '';
 }
 
 function setInputInvalidState(config, input, errorElement) {
     input.classList.add(config.inputErrorClass);
     errorElement.classList.add(config.errorClass);
-    errorElement.classList.remove('popup__error_hidden');
     errorElement.textContent = input.validationMessage;
 
 }
