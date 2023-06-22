@@ -7,13 +7,14 @@
   <title>Mesto Russia</title>
   <link rel="stylesheet" href="./pages/index.css">
   <script src="./scripts/index.js" defer></script>
+  <script src="./scripts/validate.js" defer></script>
   <meta name="description" content="Mesto Russia">
   <meta name="keywords" content="Mesto Russia">
   <meta name="author" content="Иван Гусев">
 </head>
 
 <body>
-  <div class="page">
+  <div class="page" id="popup-bg">
     <header class="header">
       <img class="header__logo" src="./images/header__logo.svg" alt="Логотип">
     </header>
@@ -40,17 +41,19 @@
     </footer>
   </div>
   <section class="popups">
-    <div class="popup popup_profile">
+    <div class="popup popup_profile" id="popup">
       <div class="popup__container">
         <button class="popup__close-button" type="button" aria-label="close"></button>
         <h2 class="popup__title">
           Редактировать профиль
         </h2>
-        <form class="popup__user-info" id="user-info" name="user-info">
+        <form class="popup__user-info" id="user-info" name="user-info" novalidate >
           <label for="name"></label>
-          <input class="popup__name" type="text" id="name" name="name">
+          <input class="popup__inputs popup__name" type="text" id="name" name="name" required minlength="2" maxlength="40">
+          <span id="error-name" class="popup__error_hidden"></span>
           <label for="description"></label>
-          <input class="popup__description" type="text" id="description" name="description">
+          <input class="popup__inputs popup__description" type="text" id="description" name="description" required minlength="2" maxlength="200">
+          <span id="error-description" class="popup__error_hidden"></span>
           <label for="save"></label>
           <button class="popup__save-button" type="submit" id="save" name="save">
             Сохранить
@@ -58,17 +61,19 @@
         </form>
       </div>
     </div>
-    <div class="popup popup_place">
+    <div class="popup popup_place" id="popup">
       <div class="popup__container">
         <button class="popup__close-button" type="button" aria-label="close"></button>
         <h2 class="popup__title">
           Новое место </h2>
-        <form class="popup__user-info popup__user-info_place" id="user-info_place" name="user-info">
+        <form class="popup__user-info popup__user-info_place" id="user-info_place" name="user-info" novalidate>
           <label for="name"></label>
-          <input class="popup__name popup__name_place" type="text" id="name_place" name="name" placeholder="Название">
+          <input class="popup__inputs popup__name popup__name_place" type="text" id="name_place" name="name" placeholder="Название" minlength="2" maxlength="30" required>
+          <span id="error-name_place" class="popup__error_hidden"></span>
           <label for="description"></label>
-          <input class="popup__description popup__description_place" type="description_place" id="description_place"
-            placeholder="Ссылка на картинку" name="description">
+          <input class="popup__inputs popup__description popup__description_place" type="url" id="description_place"
+            placeholder="Ссылка на картинку" name="description" required>
+            <span id="error-description_place" class="popup__error_hidden"></span>
           <label for="save"></label>
           <button class="popup__save-button popup__save-button_place" type="submit" id="save_place" name="save">
             Сохранить
@@ -76,7 +81,7 @@
         </form>
       </div>
     </div>
-    <div class="popup popup_place_full-size">
+    <div class="popup popup_place_full-size" id="popup">
       <div class="popup__container popup__container_full-size">
         <button class="popup__close-button" type="button" aria-label="close"></button>
         <img class="popup__photo" src="./images/kirill-pershin-1088404-unsplash.png" alt="">
