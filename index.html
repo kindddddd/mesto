@@ -50,10 +50,10 @@
         <form class="popup__user-info" id="user-info" name="user-info" novalidate >
           <label for="name"></label>
           <input class="popup__inputs popup__name" type="text" id="name" name="name" required minlength="2" maxlength="40">
-          <span id="error-name"></span>
+          <span id="error-name" class="popup__error-span"></span>
           <label for="description"></label>
           <input class="popup__inputs popup__description" type="text" id="description" name="description" required minlength="2" maxlength="200">
-          <span id="error-description"class="popup__error-span"></span>
+          <span id="error-description" class="popup__error-span"></span>
           <label for="save"></label>
           <button class="popup__save-button" type="submit" id="save" name="save">
             Сохранить
@@ -69,7 +69,7 @@
         <form class="popup__user-info popup__user-info_place" id="user-info_place" name="user-info" novalidate>
           <label for="name"></label>
           <input class="popup__inputs popup__name popup__name_place" type="text" id="name_place" name="name" placeholder="Название" minlength="2" maxlength="30" required>
-          <span id="error-name_place"></span>
+          <span id="error-name_place" class="popup__error-span"></span>
           <label for="description"></label>
           <input class="popup__inputs popup__description popup__description_place" type="url" id="description_place"
             placeholder="Ссылка на картинку" name="description" required>

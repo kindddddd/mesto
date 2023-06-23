@@ -78,5 +78,5 @@ enableValidation({
     submitButtonSelector: '.popup__save-button', 
     inactiveButtonClass: 'popup__save-button_inactive', 
     inputErrorClass: 'popup__inputs_invalid', 
-    errorClass: 'popup__error' 
+    errorClass: 'popup__error-span_error' 
 }); 
