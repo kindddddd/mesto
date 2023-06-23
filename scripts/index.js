@@ -17,7 +17,9 @@ const profileAddButtonPopup = document.querySelector('.popup_place');
 const placePopUpForm = profileAddButtonPopup.querySelector('.popup__user-info_place');
 const placeinputName = profileAddButtonPopup.querySelector('.popup__name_place');
 const placeInputLink = profileAddButtonPopup.querySelector('.popup__description_place');
-const popupList = Array.from(document.querySelectorAll('.popup'));
+const popupList = document.querySelectorAll('.popup');
+const popupArray = Array.from(popupList);
+const esc = 27;
 const initialCards = [
     {
         name: 'Архыз',
@@ -57,6 +59,7 @@ const handleCardSubmit = (evt) => {
     renderPhotoCard(createPhotoCard(cardData));
     closePopup(profileAddButtonPopup);
     evt.target.reset();
+
 };
 const openPopup = (popup) => {
     popup.classList.add('popup_opened');
@@ -122,8 +125,7 @@ addPhotoCard.addEventListener('click', () => {
 placePopUpForm.addEventListener('submit', handleCardSubmit);
 
 
-
-popupList.forEach((popup) => {
+popupArray.forEach((popup) => {
     popup.addEventListener('click', function (evt) {
         if (evt.target === evt.currentTarget) {
             closePopup(popup);
@@ -131,12 +133,11 @@ popupList.forEach((popup) => {
 
         }); });
 
-const closeByEsc = (evt) => {
-            if (evt.keyCode === 27) {
-                closePopup(cardViewPopup);
-                closePopup(profileEditButtonPopup);
-                closePopup(profileAddButtonPopup);
-            }
-          }
-        
-document.addEventListener("keydown",closeByEsc);
+
+popupArray.forEach((popup) => {
+            document.addEventListener('keydown', (evt) => {
+              if (evt.keyCode === esc) { 
+                closePopup(popup); 
+              }
+            });
+          });

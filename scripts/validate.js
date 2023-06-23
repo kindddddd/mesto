@@ -43,7 +43,7 @@ function toggleButtonValidity(config, form) {
 } 
  
  
-function setSubmitListener(form) { 
+function setSubmitListener(config, form){ 
     form.addEventListener('submit', function (evt) { 
         evt.preventDefault(); 
         toggleButtonValidity(config, form); 
@@ -56,7 +56,7 @@ function enableValidation({ formSelector, inputSelector, ...rest}) {
     const formsArray = Array.from(forms); 
   
     formsArray.forEach(function (form) { 
-        setSubmitListener(form); 
+        setSubmitListener(rest, form); 
         toggleButtonValidity(rest, form);    
     });    
   
