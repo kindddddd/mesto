@@ -61,12 +61,19 @@ const handleCardSubmit = (evt) => {
     evt.target.reset();
 
 };
-const openPopup = (popup) => {
-    popup.classList.add('popup_opened');
-};
-const closePopup = (popup) => {
-    popup.classList.remove('popup_opened');
-};
+const closeByEsc = (popup, evt) => {  
+    if (evt.keyCode === esc) {   
+      closePopup(popup);   
+    }  
+  };         
+  const openPopup = (popup) => { 
+    popup.classList.add('popup_opened'); 
+    document.addEventListener('keydown', closeByEsc.bind(null, popup));   
+  };
+  const closePopup = (popup) => { 
+    popup.classList.remove('popup_opened'); 
+    document.removeEventListener('keydown', closeByEsc.bind(null, popup));   
+  };
 const renderPhotoCard = (photoCard) => {
     photoGrid.prepend(photoCard);
 }
@@ -133,11 +140,3 @@ popupArray.forEach((popup) => {
 
         }); });
 
-
-popupArray.forEach((popup) => {
-            document.addEventListener('keydown', (evt) => {
-              if (evt.keyCode === esc) { 
-                closePopup(popup); 
-              }
-            });
-          });
