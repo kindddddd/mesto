@@ -61,18 +61,19 @@ const handleCardSubmit = (evt) => {
     evt.target.reset();
 
 };
-const closeByEsc = (popup, evt) => {  
-    if (evt.keyCode === esc) {   
-      closePopup(popup);   
-    }  
-  };         
+const closeByEsc = (evt) => {   
+    const openedPopup = document.querySelector('.popup_opened');
+    if (evt.keyCode === esc && openedPopup) {    
+        closePopup(openedPopup);    
+    }   
+};        
   const openPopup = (popup) => { 
     popup.classList.add('popup_opened'); 
-    document.addEventListener('keydown', closeByEsc.bind(null, popup));   
+    document.addEventListener('keydown', closeByEsc);   
   };
   const closePopup = (popup) => { 
     popup.classList.remove('popup_opened'); 
-    document.removeEventListener('keydown', closeByEsc.bind(null, popup));   
+    document.removeEventListener('keydown', closeByEsc);   
   };
 const renderPhotoCard = (photoCard) => {
     photoGrid.prepend(photoCard);
