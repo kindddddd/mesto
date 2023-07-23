@@ -1,4 +1,5 @@
 import { openPopup, closePopup } from './index.js'; 
+import { formValidatorPlace } from './FormValidator.js'; 
 
 export const initialCards = [
     {
@@ -55,9 +56,12 @@ const createPhotoCard = (cardData) => {
     return card.generateCard();
 };
 
-addPhotoCard.addEventListener('click', () => {
-    openPopup(profileAddButtonPopup);
-});
+
+addPhotoCard.addEventListener('click', () => { 
+    openPopup(profileAddButtonPopup); 
+    formValidatorPlace.resetValidation();});
+
+
 placePopUpForm.addEventListener('submit', handleCardSubmit);
 
 export class Card { 
