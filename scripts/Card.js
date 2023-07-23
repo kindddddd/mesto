@@ -68,7 +68,10 @@ export class Card {
     constructor(name, link) { 
       this._name = name; 
       this._link = link; 
-      this._element = this._getTemplate(); 
+      this._element = this._getTemplate();
+      this._cardViewPopup = document.querySelector('.popup_place_full-size');  
+      this._cardPopupName = this._cardViewPopup.querySelector('.popup__title'); 
+      this._cardImage = this._cardViewPopup.querySelector('.popup__photo'); 
     } 
 
     _getTemplate() { 
@@ -91,15 +94,13 @@ export class Card {
         e.target.closest('.element').remove(); 
     }
     
-    _handleOpenPopup = (e) => {
-        const cardViewPopup = document.querySelector('.popup_place_full-size'); 
-        const cardViewPopupName = cardViewPopup.querySelector('.popup__title');
-        const cardViewPopupPhoto = cardViewPopup.querySelector('.popup__photo');
-        openPopup(cardViewPopup);
-        cardViewPopupName.textContent = this._name;
-        cardViewPopupPhoto.src = this._link;
-        cardViewPopupPhoto.alt = this._name;
-    } 
+    _handleOpenPopup = (e) => { 
+        openPopup(this._cardViewPopup); 
+        this._cardPopupName.textContent = this._name; 
+        this._cardImage.src = this._link; 
+        this._cardImage.alt = this._name; 
+      }
+    
 
     _setEventListeners() { 
         const cardImage = this._element.querySelector('.element__photo');
