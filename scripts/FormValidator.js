@@ -3,6 +3,9 @@ export class FormValidator {
     constructor(config, formElement) {
         this._config = config;
         this._formElement = formElement;
+        this._inputsArray = Array.from(this._formElement.querySelectorAll(this._config.inputSelector)); 
+        this._submitButton = this._formElement.querySelector(this._config.submitButtonSelector);
+
     }
 
     _setInputValidState(input, errorElement) {
@@ -26,11 +29,10 @@ export class FormValidator {
     }
 
     _toggleButtonValidity() {
-        const submitButton = this._formElement.querySelector(this._config.submitButtonSelector);
         if (this._formElement.checkValidity()) {
-            this._enableButton(submitButton);
+            this._enableButton(this._submitButton);
         } else {
-            this._disableButton(submitButton);
+            this._disableButton(this._submitButton);
         }
     }
 
@@ -45,15 +47,12 @@ export class FormValidator {
     }
 
     _setEventListeners() { 
-        const inputsArray = Array.from(this._formElement.querySelectorAll(this._config.inputSelector)); 
-        const submitButton = this._formElement.querySelector(this._config.submitButtonSelector); 
-    
-        inputsArray.forEach(input => { 
+        this._inputsArray.forEach(input => { 
             input.addEventListener('input', () => { 
                 this._checkInputValidity(input); 
                 this._toggleButtonValidity();
                 if(input.value === ''){
-                    this._disableButton(submitButton);
+                    this._disableButton(this._submitButton);
                 }
             }); 
         }); 
@@ -66,13 +65,10 @@ export class FormValidator {
     }
 
     resetValidation() {
-        const inputsArray = Array.from(this._formElement.querySelectorAll(this._config.inputSelector));
-        const submitButton = this._formElement.querySelector(this._config.submitButtonSelector);
-    
-        inputsArray.forEach(input => {
+        this._inputsArray.forEach(input => {
             const errorElement = document.querySelector(`#error-${input.id}`);
             if(input.value === ''){
-                this._disableButton(submitButton);
+                this._disableButton(this._submitButton);
             } else {
                 this._setInputValidState(input, errorElement);
             }
