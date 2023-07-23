@@ -70,6 +70,10 @@ export const validationConfig = {
     errorClass: 'popup__error-span_error'
 };
 
-export const formsArray = Array.from(document.querySelectorAll(validationConfig.formSelector));
 
+const formProfile = document.querySelector('.popup__user-info_profile'); 
+const formPlace = document.querySelector('.popup__user-info_place'); 
+
+export const formValidatorProfile = new FormValidator(validationConfig, formProfile);
+export const formValidatorPlace = new FormValidator(validationConfig, formPlace);
 

@@ -1,5 +1,5 @@
 import { Card, initialCards, photoGrid} from './Card.js'; 
-import { FormValidator, formsArray, validationConfig} from './FormValidator.js'; 
+import { formValidatorProfile, formValidatorPlace } from './FormValidator.js'; 
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileEditButtonPopup = document.querySelector('.popup_profile');
 const profileInputName = profileEditButtonPopup.querySelector('.popup__name');
@@ -12,9 +12,9 @@ const closeButtons = document.querySelectorAll('.popup__close-button');
 const popupList = document.querySelectorAll('.popup');
 const popupArray = Array.from(popupList);
 const esc = 27;
-const closeByEsc = (evt) => {   
-    const openedPopup = document.querySelector('.popup_opened');
-    if (evt.keyCode === esc && openedPopup) {    
+const closeByEsc = (evt) => {    
+    if (evt.keyCode === esc) {  
+        const openedPopup = document.querySelector('.popup_opened');  
         closePopup(openedPopup);    
     }   
 };        
@@ -26,7 +26,12 @@ export const closePopup = (popup) => {
     popup.classList.remove('popup_opened'); 
     document.removeEventListener('keydown', closeByEsc);   
   };
-
+  
+const createCard = (item) => {
+    const card = new Card(item.name, item.link);
+    const cardElement = card.generateCard();
+    return cardElement;
+};
 const handleProfileSubmit = (evt) => {
     evt.preventDefault();
     const name = profileInputName.value;
@@ -52,17 +57,16 @@ popupArray.forEach((popup) => {
         if (evt.target === evt.currentTarget) {
             closePopup(popup);
         }
-
-        }); });
+       });
+    });
 
    
 initialCards.forEach((item) => { 
-            const card = new Card(item.name, item.link); 
-            const cardElement = card.generateCard(); 
-            photoGrid.prepend(cardElement); 
-        });  
+    const cardElement = createCard(item);
+    photoGrid.prepend(cardElement);        
+ });  
         
-formsArray.forEach(form => {
-            const formValidator = new FormValidator(validationConfig, form);
-            formValidator.enableValidation();
-        });       
+ // включить валидацию для каждой формы
+ formValidatorProfile.enableValidation();
+ formValidatorPlace.enableValidation();
+    
